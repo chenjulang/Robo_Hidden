@@ -2,7 +2,7 @@ import Game.Metadata
 
 
 
-World "Module"
+World "LinearAlgebra"
 Level 7
 
 Title "Hülle"
@@ -52,10 +52,10 @@ variable (R M : Type*) [Semiring R] [AddCommMonoid M] [Module R M] (N : Submodul
 end
 
 
-example {a b : ℝ} (M : Set (Fin 2 → ℝ))
-    (h₁ : ![a,b] ∈ M) (h₂ : ![a+b, a-b] ∈ M) (hM : span ℝ M ⊆ (Fin 2 → ℝ) ) :
-      a = 0 := by
-  sorry
+-- example {a b : ℝ} (M : Set (Fin 2 → ℝ))
+--     (h₁ : ![a,b] ∈ M) (h₂ : ![a+b, a-b] ∈ M) (hM : span ℝ M ⊆ (Fin 2 → ℝ) ) :
+--       a = 0 := by
+--   sorry
 
 
 #check Basis.mem_span

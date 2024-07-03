@@ -2,8 +2,8 @@ import Game.Metadata
 
 
 
-World "Basis"
-Level 2
+World "LinearAlgebra"
+Level 10
 
 Title "Lineare Unabhängigkeit"
 

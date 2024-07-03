@@ -4,8 +4,8 @@ import Game.Metadata
 
 open Submodule
 
-World "Module2"
-Level 2
+World "LinearAlgebra"
+Level 13
 
 Title "Lineare Abbildung"
 
@@ -24,7 +24,7 @@ usally denoted `f(M) = {y | ∃ x ∈ M, f(x) = y}` in mathematical texts.
 
 /--  -/
 Statement : True := by
-  sorry
+  simp
 
 -- example {K V W : Type} [Field K] [AddCommMonoid V] [AddCommMonoid W]
 --     [Module K V] [Module K W] (M : Set V) (f : V →ₗ[K] W) :

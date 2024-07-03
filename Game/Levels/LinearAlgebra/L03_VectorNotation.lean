@@ -2,7 +2,7 @@ import Game.Metadata
 
 
 
-World "Module"
+World "LinearAlgebra"
 Level 3
 
 Title "Konkrete Vektorräume"

@@ -2,7 +2,7 @@ import Game.Metadata
 
 
 
-World "Module"
+World "LinearAlgebra"
 Level 6
 
 Title "Hülle"

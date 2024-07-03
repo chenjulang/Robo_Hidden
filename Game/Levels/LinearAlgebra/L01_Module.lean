@@ -2,8 +2,8 @@ import Game.Metadata
 
 
 
-import Game.Metadata.StructInstWithHoles
-World "Module"
+-- import Game.Metadata.StructInstWithHoles
+World "LinearAlgebra"
 Level 1
 
 Title "Module"
@@ -97,4 +97,4 @@ Statement : Module ℚ ℝ := by
     change (0 : ℚ) * a = 0
     simp
 
-NewTactic refine exact change
+-- NewTactic refine exact change

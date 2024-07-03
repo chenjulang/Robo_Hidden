@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Wed Jul  3 21:49:13 2024\n"
+"POT-Creation-Date: Thu Jul  4 02:04:41 2024\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: de\n"
@@ -5549,8 +5549,443 @@ msgid "Auf eurer Reise kommt ihr an einem Zwergplaneten vorbei. Darauf steht ein
 "Die Person stellt sich euch als Cantor der Magier vor."
 msgstr ""
 
-#: Game.Levels.VectorSpan
-msgid "VectorSpan"
+#: Game.Levels.LinearAlgebra.L01_Module
+msgid "Module"
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.L01_Module
+msgid "Konkret heisst das:\n"
+"\n"
+"Sei `R` ein Ring. Ein `R`-Modul ist eine kommutative Gruppe `(V, +)` zusammen mit\n"
+"einer Abbildung `• : R × V → V` (Skalarmultiplitation genannt), die folgende\n"
+"Eigenschaften beliebige `(r s : R)` und `(v w : V)`erfüllt:\n"
+"- `r • (v + w) = r • v + r • w`\n"
+"- `(r + s) • v = r • v + s • v`\n"
+"- `(r * s) • v = r • s • v`\n"
+"- `1 • r = r`\n"
+"- `0 • v = 0`\n"
+"- `r • 0 = 0`"
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.L01_Module
+msgid "Zeige, dass $\\\\mathbb{R}$ ein $\\\\mathbb{Q}$-Modul ist."
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.L01_Module
+msgid "**Robo**: Als erstes willst du die Stuktur `Modul` aufteilen in einzelne Beweise.\n"
+"Der Syntax dafür ist:\n"
+"\n"
+"```\n"
+"refine { ?..! }\n"
+"```"
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.L01_Module
+msgid "**Robo**: Hier musst du die Skalarmultiplikation angeben.\n"
+"Benutze dafür `exact fun (a : ℚ) (r : ℝ) => ↑a * r`."
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.L01_Module
+msgid "**Robo**: Jetzt musst du alle eigenschaften eines $\\mathbb{Q}$-Moduls zeigen,\n"
+"das sind also 6 einzelne Goals."
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.L01_Module
+msgid "**Robo**: Mit `change (1 : ℚ) * «{b}» = «{b}»` kannst du das Goal umschreiben, damit\n"
+"dann andere Taktiken besser damit arbeiten können."
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.L01_Module
+msgid "**Robo**: Den Teil kannst du mit `simp` beweisen."
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.L01_Module
+msgid "**Robo**: Benutze `change` um `•` durch `*` zu ersetzen."
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.L01_Module
+msgid "**Robo**: Explizit `change («{x}» * «{y}» : ℚ) * «{b}» = «{x}» * («{y}» * «{b}»)`"
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.L01_Module
+msgid "**Robo**: Mit `simp` und `ring` kannst du den Rest beweisen."
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.L01_Module
+msgid "**Robo**: Explizit `change «{a}» * («{x}» + «{y}») = «{a}» * «{x}» + «{a}» * «{y}»`"
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.L01_Module
+msgid "**Robo**: Explizit\n"
+"`change («{r}» + «{s}» : ℚ) * «{x}» = «{r}» * «{x}» + «{s}» * «{x}»`"
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.L01_Module
+msgid "**Robo**: Explizit `change (0 : ℚ) * «{a}» = 0`"
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.L02_VectorNotation
+msgid "Konkrete Vektorräume"
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.L02_VectorNotation
+msgid "Den $\\mathbb{Q}$-Vektorraum $\\mathbb{Q}^3$ definiert man am besten mit\n"
+"der lokalen Notation\n"
+"\n"
+"```\n"
+"local notation `ℚ³` := Fin 3 → ℚ\n"
+"```\n"
+"\n"
+"Dabei ist `Fin 3` die Indexmenge $\\{0, 1, 2\\}$.\n"
+"\n"
+"Die schreibweise für einen Vektor ist `![ _, _ ]`. Zu beachten ist,\n"
+"dass man bei Zahlen explizit einen Typ angeben muss, sonst denkt sich\n"
+"Lean, man arbeite über `ℕ`.\n"
+"\n"
+"Um direkt Vektoroperationen über `ℚ` auszurechnen, kann man oft\n"
+"`#eval` benutzen:\n"
+"\n"
+"```\n"
+"#eval ![ (2 : ℚ), 5 ] + ![ 1/2, -7 ]\n"
+"```\n"
+"zeigt `![5/2, -2]` an.\n"
+"\n"
+"Um eine Gleichheit in einem Beweis zu verwenden, muss man andere Taktiken\n"
+"benutzen.\n"
+"\n"
+"Am hilfreichsten ist die kombination `funext i, fin_cases i`, die\n"
+"Dann eine Vektorgleichung komponentenweise aufteilt.\n"
+"\n"
+"Für jede Komponente kann man dann mit `simp` und `ring` weiterkommen."
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.L02_VectorNotation
+msgid ""
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.L03_VectorNotation
+msgid "Konkrete Vektorräume"
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.L03_VectorNotation
+msgid "Beachte dass Skalarmultiplikation mit `•` geschrieben wird, und nicht mit `*`!"
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.L03_VectorNotation
+msgid ""
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.L04_Submodule
+msgid "Untervektorräume"
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.L04_Submodule
+msgid "Sei `K` ein Körper und `V` ein `K`-Modul.\n"
+"\n"
+"```\n"
+"variable {K V : Type _} [Field K]\n"
+"variable [AddCommMonoid V] [Module K V]\n"
+"```\n"
+"\n"
+"Untermodule/Untervektorräume werden in Lean ein bisschen anders definiert als Module/Vektorräume.\n"
+"\n"
+"Grob gesagt ist `V` ein Typ (denke z.B. an eine generelle Menge)\n"
+"und `[module K V]` eine Instanz, die von Lean automatisc gefunden wird und\n"
+"sagt, dass auf `V` eine `K`-Modulstruktur existiert. Hingegen ist `submodule K V` die Menge aller\n"
+"Untermodulen\n"
+"in `V`. Deshalb definieren wir Untermodule, indem wir Elemente aus dieser Menge auswählen:\n"
+"\n"
+"```\n"
+"variable (U : Submodule K V)\n"
+"```\n"
+"\n"
+"Unter anderem hat dies den Vorteil, dass `submodule K V` eine Lattice ist, also eine `≤`-Operation\n"
+"besitzt. Auf dem Papier\n"
+"schreibt man normalerweise `U₁ ⊆ U₂` um zu sagen, dass das eine Untermodul eine Teilmenge des\n"
+"anderen ist, in Lean braucht\n"
+"man dafür immer `≤`.\n"
+"\n"
+"Ganz `V` als Untermodul von sich selbst betrachtet, schreibt man als `⊤` (`\\top`), also das\n"
+"grösste Element in dieser Lattice,\n"
+"und das Null-Untermodule `{0}` with als `⊥` geschrieben (`\\bot`), also das kleinste Element."
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.L04_Submodule
+msgid "Jeder Untervektorraum `U ⊆ V` ist eine Teilmenge von `V`."
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.L05_Submodule
+msgid "Untervektorräume"
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.L05_Submodule
+msgid "Elemente aus einem Untervektorraum $U$ wählt man gleich aus, wie Elemente in einer Menge.\n"
+"Nämlich man nimmt ein Element `(x : V)` und sagt, dass es in `U` liegt mit `x ∈ U` (`\\in`)."
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.L05_Submodule
+msgid "TODO: Spannendere Aufgaben."
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.L06_Span
+msgid "Hülle"
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.L06_Span
+msgid "Ein typischer Untervektorraum ist die Hülle `⟨M⟩`, oder `span`, also die Menge aller\n"
+"`K`-Linearkombinationen von Elementen aus der Menge `M`.\n"
+"\n"
+"In Lean ist dies `Submodule.span K M`."
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.L06_Span
+msgid "Zeige, dass $x \\\\in M$ auch Element von der $K$-linearen Hülle\n"
+"  \\\\langle M \\\\rangle ist."
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.L07_Span
+msgid "Hülle"
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.L07_Span
+msgid ""
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.L07_Span
+msgid "Für $x, y \\\\in M$, zeige dass $x + 2y$ in der $K$-linearen Hülle $\\\\langle M \\\\rangle$ liegt."
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.L08_GeneratingSet
+msgid "Erzeugendensystem"
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.L08_GeneratingSet
+msgid "Dass eine Familie von Vektoren `M` den ganzen Vektorraum\n"
+"aufspannt, sagt man in Lean mit `⊤ ≤ span K M`. (Man könnte auch `span K M = ⊤` schreiben,\n"
+"aber per Konvention wird `≤` bevorzugt, da `x ≤ ⊤` immer gilt (siehe `le_top`))"
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.L08_GeneratingSet
+msgid "Zeige, dass `![1, 0], ![1, 1]` den ganzen `ℝ`-Vektorraum `ℝ²` aufspannt."
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.M01_LinearMap
+msgid "Lineare Abbildung"
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.M01_LinearMap
+msgid "Sei `R` ein Ring und `V W` zwei `R`-Moduln. Eine `R`-lineare Abbildung wird in Lean\n"
+"folgendermassen geschrieben: `V →ₗ[R] W` (`\\to` + `\\_l`).\n"
+"\n"
+"Man erstellt eine lineare Abbildung aus einer Funktion `f : V → W` zusammen mit den beweisen,\n"
+"dass `f` Addition und Skalarmultiplikation erhält,\n"
+"i.e. `f (x + y) = f x + f y` und `f (r • x) = r • f x`.\n"
+"\n"
+"Hier definieren wir zum Beispiel die Null-Abbildung, die einfach alles auf `0` sendet:\n"
+"\n"
+"```\n"
+"variables {R V W : Type*} [ring R] [add_comm_monoid V] [add_comm_monoid W]\n"
+"[module R V] [module R W]\n"
+"\n"
+"def my_zero_map : V →ₗ[R] W :=\n"
+"  { to_fun := λ x, 0,\n"
+"    map_add' :=\n"
+"    begin\n"
+"      intros,\n"
+"      simp,\n"
+"    end,\n"
+"    map_smul' :=\n"
+"    begin\n"
+"      intros,\n"
+"      simp,\n"
+"    end }\n"
+"```"
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.M02_LinearIndep
+msgid "Lineare Unabhängigkeit"
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.M02_LinearIndep
+msgid ""
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.M02_LinearIndep
+msgid "Zeige, dass `![1, 0], ![1, 1]` linear unabhängig über `ℝ` sind."
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.M02_LinearIndep
+msgid "`rw [Fintype.linearIndependent_iff]`"
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.M02_LinearIndep
+msgid "`intros c h`"
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.M02_LinearIndep
+msgid "BUG: `simp at h` does not work :("
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.M04_Basis
+msgid "Basis"
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.M04_Basis
+msgid ""
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.N01_Span
+msgid "Verpackungswahn"
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.N01_Span
+msgid ""
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.N01_Span
+msgid ""
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.N02_Span
+msgid "Lineare Abbildung"
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.N02_Span
+msgid "(Verpackungswahn)\n"
+"If `f` is a function and `M` a subset of its domain, then\n"
+"`f '' M` or `set.image f M` is the notation for the image, which is\n"
+"usally denoted `f(M) = {y | ∃ x ∈ M, f(x) = y}` in mathematical texts."
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.N02_Span
+msgid ""
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.N03_Idempotent
+msgid "Lineare Abbildung"
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.N03_Idempotent
+msgid ""
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.N03_Idempotent
+msgid ""
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.N04_Idempotent
+msgid "Lineare Abbildung"
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.N04_Idempotent
+msgid ""
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.N04_Idempotent
+msgid ""
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.N05_Sum
+msgid "Lineare Abbildung"
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.N05_Sum
+msgid "Die interne Summe von Untermodulen wird in Lean mit `⊔` (`\\sup`) geschrieben."
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.N05_Sum
+msgid "Zeige, dass `V₁ ⊔ V₂` tatsächlich die interne Summe `⟨V₁ ∪ V₂⟩` ist."
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.N06_Sum
+msgid "Lineare Abbildung"
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.N06_Sum
+msgid "Eine interne Summe über eine Familie von Untermodulen `(T : ι → submodule K V)`\n"
+"wird als `⨆ (i : ι), T i` geschrieben (`\\supr`)."
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.N06_Sum
+msgid ""
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.N07_Prod
+msgid "Lineare Abbildung"
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.N07_Prod
+msgid "Die externe Summe von (Unter-) Modulen wird als `V × W` geschrieben\n"
+"Das Produkt zweier Module wird mit `×` geschrieben.\n"
+"\n"
+"Lean weiss dann automatisch, dass das Produkt wieder ein Vektorraum ist.\n"
+"-/\n"
+"example : module ℝ (ℝ × ℝ) := infer_instance\n"
+"\n"
+"/-\n"
+"Und `ℝ × ℝ` und `fin 2 → ℝ` sind natürlich Isomorph. In Praxis eignet sich\n"
+"die Funktionsschreibweise besser, deshalb verwenden wir diese als\n"
+"definition für `ℝ²`.\n"
+"\n"
+"Hier die Äquivalenz als generelle Typen:\n"
+"-/\n"
+"example : (fin 2 → ℝ) ≃ ℝ × ℝ  :=\n"
+"begin\n"
+"  apply pi_fin_two_equiv,\n"
+"end\n"
+"\n"
+"/-\n"
+"Äquivalenz als Vektorräume schreibt man als `ℝ`-lineare Äquivalenz `≃ₗ[ℝ]`."
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.N07_Prod
+msgid "Zeige dass das Produkt `ℝ × ℝ` und `ℝ²` isomorph sind als `ℝ`-Vektorräume."
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.N08_Prod
+msgid "Lineare Abbildung"
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.N08_Prod
+msgid "Eine Familie von Vektorräumen schreibt man erst einmal als Funktion einer Indexmenge `ι`.\n"
+"-/\n"
+"\n"
+"variables {ι : Type u} {V : ι → Type u}\n"
+"\n"
+"/-\n"
+"Für einen einzelnen Vektorraum würde man jetzt Instanzen `[add_comm_monoid V] [module K V]`\n"
+"definieren. Lean-Instanzen-Manager versteht hier `∀`-Ausdrücke:\n"
+"-/\n"
+"\n"
+"variables [∀i, add_comm_monoid (V i)] [∀i, module K (V i)]\n"
+"\n"
+"/-\n"
+"Ein externes Produkt von Vektorräumen schreibt man einfach mit `\\Pi`, also `Π i, V i`.\n"
+"\n"
+"Lean kann aus den Ausdrücken oben dann automatisch herausfinden, dass `Π i, V i`\n"
+"ein `K`-Vektorraum ist:"
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.N08_Prod
+msgid "Sei `U` ein `K`-Vektorraum und `fᵢ : U → Vᵢ` eine Familie von `K`-lineare Abbildungen\n"
+"in `K`-Vektorräume. Dann gibt es genau eine Abbildung `f : U → (Π i, V i)`, die mit\n"
+"allen kommutiert."
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.N09_Prod
+msgid "Lineare Abbildung"
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.N09_Prod
+msgid ""
+msgstr ""
+
+#: Game.Levels.LinearAlgebra.N09_Prod
+msgid ""
+msgstr ""
+
+#: Game.Levels.LinearAlgebra
+msgid "LinearAlgebra"
 msgstr ""
 
 #: Game

@@ -14,7 +14,9 @@ import Game.Levels.SetTheory
 import Game.Levels.MatrixTrace
 import Game.Levels.Cantor
 
-import Game.Levels.VectorSpan
+import Game.Levels.LinearAlgebra
+-- import Game.Levels.VectorSpan
+
 
 
 
