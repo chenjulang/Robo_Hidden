@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Thu Jun 13 17:48:01 2024\n"
+"POT-Creation-Date: Wed Jul  3 21:01:07 2024\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: de\n"
@@ -4622,7 +4622,7 @@ msgid "**Du**: Das scheint einfach zu sagen, dass diese `E i j` ein Erzeugendens
 msgstr ""
 
 #: Game.Levels.MatrixTrace.L04_MatrixEqSum
-msgid "**Robo**: Unter Summen braucht man `simp_rw`."
+msgid "**Robo**: Schau zuerst den Ausdruck `(A i j) • E i j` an. Unter Summen braucht man `simp_rw`."
 msgstr ""
 
 #: Game.Levels.MatrixTrace.L04_MatrixEqSum
