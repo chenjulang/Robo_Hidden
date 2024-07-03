@@ -11,7 +11,8 @@ def LocalGameServer : Dependency := {
 
 def RemoteGameServer : Dependency := {
   name := `GameServer
-  src := Source.git "https://github.com/leanprover-community/lean4game.git" leanVersion "server"
+  src := Source.git "https://github.com/leanprover-community/lean4game.git" "dev" "server"
+  -- TODO: change back from commit to `leanVersion`!
 }
 
 /- Choose GameServer dependency depending on the environment variable `LEAN4GAME`. -/
@@ -32,7 +33,7 @@ you can use `require mathlib from git "[URL]" @ leanVersion`
 
 
 
--- require mathlib from git "https://github.com/leanprover-community/mathlib4.git" @ leanVersion
+require mathlib from git "https://github.com/leanprover-community/mathlib4.git" @ leanVersion
 
 
 
@@ -54,3 +55,5 @@ package Game where
 
 @[default_target]
 lean_lib Game
+
+set_option autoImplicit false
