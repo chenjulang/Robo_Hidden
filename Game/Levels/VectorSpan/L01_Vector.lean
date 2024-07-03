@@ -1,9 +1,11 @@
 import Mathlib.Data.Matrix.Basic
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic
+import Game.Metadata
 
--- World "Matrix"
--- Level 1
+
+World "VectorSpan"
+Level 1
 
 -- Introduction
 
@@ -18,10 +20,11 @@ import Mathlib.Tactic
 
 #check Matrix.vecCons
 
-
+-- LemmaDoc test1
+-- '123'
 open Real
 
-example : ![(sqrt 3)/2, 1/2] + ![-(sqrt 3)/2, 1/2] = ![0, 1] := by
+Statement test1 : ![(sqrt 3)/2, 1/2] + ![-(sqrt 3)/2, 1/2] = ![0, 1] := by
   --simp
   --ring
   funext i

@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Wed Jul  3 21:01:07 2024\n"
+"POT-Creation-Date: Wed Jul  3 21:49:13 2024\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: de\n"
@@ -5547,6 +5547,10 @@ msgid "Auf eurer Reise kommt ihr an einem Zwergplaneten vorbei. Darauf steht ein
 "Haufen ausgerolltem Papier zu enden.\n"
 "\n"
 "Die Person stellt sich euch als Cantor der Magier vor."
+msgstr ""
+
+#: Game.Levels.VectorSpan
+msgid "VectorSpan"
 msgstr ""
 
 #: Game

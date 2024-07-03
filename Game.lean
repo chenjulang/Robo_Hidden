@@ -14,6 +14,10 @@ import Game.Levels.SetTheory
 import Game.Levels.MatrixTrace
 import Game.Levels.Cantor
 
+import Game.Levels.VectorSpan
+
+
+
 -- *uncomment the following line to get the incomplete planets.*
 -- import Game.DevPlanets
 
